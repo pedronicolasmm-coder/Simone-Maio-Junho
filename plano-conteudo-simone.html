@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Conteúdo — Simone Welter · Maio/Junho 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marrom:#2C1A0E;--marrom-mid:#4A2C1A;
+  --amarelo:#F5A623;--amarelo-clr:#FFF8E7;
+  --creme:#FEF6EC;--branco:#FFFFFF;--texto:#1A1A1A;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--creme);color:var(--texto);overflow-x:hidden;}
+
+/* ── BARRAS LATERAIS ── */
+.barra{position:fixed;top:0;bottom:0;width:26px;background:var(--marrom);z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;}
+.barra.esq{left:0;}.barra.dir{right:0;}
+.bd{width:5px;height:5px;border-radius:50%;background:var(--amarelo);opacity:.6;}
+
+.pg{margin:0 26px;}
+
+/* ══ CAPA ══ */
+.capa{background:var(--marrom);padding:80px 60px 70px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.capa-mandala{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:640px;height:640px;opacity:.05;animation:spin 90s linear infinite;}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg);}}
+.capa-tag{display:inline-block;background:var(--amarelo);color:var(--marrom);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:28px;position:relative;z-index:1;}
+.capa h1{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,80px);font-weight:900;color:var(--branco);line-height:1.0;margin-bottom:14px;position:relative;z-index:1;}
+.capa h1 em{font-style:italic;color:var(--amarelo);}
+.capa-sub{font-size:clamp(14px,1.8vw,17px);color:rgba(255,255,255,.65);max-width:520px;line-height:1.7;margin-bottom:48px;position:relative;z-index:1;}
+.capa-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;position:relative;z-index:1;}
+.pill{background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.4);color:rgba(255,255,255,.8);font-size:13px;font-weight:500;padding:7px 18px;border-radius:30px;}
+.bfly{position:absolute;opacity:.18;animation:flutter 6s ease-in-out infinite;}
+@keyframes flutter{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(-12px) rotate(4deg);}}
+
+/* ══ HEADERS ══ */
+.sec-header{padding:60px 60px 10px;max-width:1100px;margin:0 auto;}
+.sec-label{display:block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amarelo);margin-bottom:10px;}
+.sec-h2{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,42px);font-weight:700;color:var(--marrom);line-height:1.2;}
+.sec-h2 em{font-style:italic;color:var(--amarelo);}
+
+/* ══ GRADE CARROSSÉIS ══ */
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;padding:32px 60px 70px;max-width:1100px;margin:0 auto;}
+
+.card{border-radius:20px;overflow:hidden;box-shadow:0 6px 30px rgba(44,26,14,.12);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;background:var(--branco);}
+.card:hover{transform:translateY(-5px);box-shadow:0 16px 50px rgba(44,26,14,.2);}
+
+.card-meta{padding:12px 18px;display:flex;align-items:center;gap:10px;background:var(--marrom);}
+.card-sem{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);}
+.card-tipo{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--amarelo);color:var(--marrom);padding:3px 10px;border-radius:20px;}
+
+/* corpo do card — SEM foto */
+.card-body{padding:24px 24px 20px;display:flex;flex-direction:column;gap:14px;flex:1;}
+
+.card-pretitulo{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amarelo);}
+
+.card-titulo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--marrom);line-height:1.25;}
+.card-titulo em{font-style:italic;color:var(--amarelo);}
+
+.card-subtitulo{font-size:13px;color:#777;font-style:italic;line-height:1.5;border-left:3px solid var(--amarelo);padding-left:12px;}
+
+.slides-lista{display:flex;flex-direction:column;gap:8px;}
+.slide-item{display:flex;gap:10px;align-items:flex-start;}
+.slide-num{width:22px;height:22px;border-radius:50%;background:var(--marrom);color:var(--amarelo);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.slide-txt{font-size:13px;color:var(--texto);line-height:1.5;}
+.slide-txt strong{color:var(--marrom);font-weight:700;}
+.slide-cta{background:var(--marrom);border-radius:8px;padding:10px 14px;}
+.slide-cta .slide-txt{color:rgba(255,255,255,.9);}
+.slide-cta strong{color:var(--amarelo);}
+
+.card-footer{padding:14px 18px;background:var(--creme);border-top:1px solid rgba(0,0,0,.06);display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.card-footer-txt{font-size:12px;color:#888;flex:1;line-height:1.4;}
+.card-cta-badge{font-size:11px;font-weight:700;letter-spacing:1px;background:var(--amarelo);color:var(--marrom);border:none;padding:5px 14px;border-radius:20px;white-space:nowrap;}
+
+/* ══ LEGENDAS ══ */
+.legenda-wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding:0 60px 80px;max-width:1100px;margin:0 auto;}
+.legenda-card{background:var(--branco);border-radius:16px;padding:24px 26px;border-left:4px solid var(--amarelo);box-shadow:0 2px 16px rgba(44,26,14,.07);}
+.leg-num{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--amarelo);text-transform:uppercase;margin-bottom:6px;}
+.leg-titulo{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--marrom);margin-bottom:10px;}
+.leg-texto{font-size:13px;color:#555;line-height:1.75;white-space:pre-line;}
+.leg-hashtags{margin-top:12px;font-size:11px;color:#aaa;font-style:italic;}
+.leg-cta-badge{display:inline-block;margin-top:10px;background:var(--marrom);color:var(--amarelo);font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;}
+
+/* ══ VÍDEOS ══ */
+.sec-videos{background:var(--marrom);padding:70px 60px;}
+.sec-videos .sec-header{padding:0 0 40px;max-width:1100px;margin:0 auto;}
+.sec-videos .sec-h2{color:var(--branco);}
+.videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;max-width:1100px;margin:0 auto;}
+
+.video-card{background:rgba(255,255,255,.06);border:1px solid rgba(245,166,35,.2);border-radius:18px;overflow:hidden;transition:background .2s,transform .2s;display:flex;flex-direction:column;}
+.video-card:hover{background:rgba(245,166,35,.08);transform:translateY(-4px);}
+
+/* corpo vídeo — SEM thumb */
+.video-body{padding:22px 20px 24px;display:flex;flex-direction:column;gap:12px;flex:1;}
+.video-sem{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.video-titulo{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--branco);line-height:1.3;}
+.video-titulo em{font-style:italic;color:var(--amarelo);}
+.video-dur{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--amarelo);background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.25);padding:4px 12px;border-radius:20px;width:fit-content;}
+.video-textos{display:flex;flex-direction:column;gap:7px;}
+.vt{background:rgba(255,255,255,.07);border-left:3px solid var(--amarelo);border-radius:0 8px 8px 0;padding:8px 12px;font-size:12px;font-weight:500;color:rgba(255,255,255,.85);line-height:1.45;}
+.video-mat{font-size:11px;color:rgba(255,255,255,.35);line-height:1.6;margin-top:2px;}
+.video-alerta{background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.3);border-radius:8px;padding:9px 12px;font-size:11px;color:var(--amarelo);line-height:1.5;}
+
+/* ══ RESUMO ══ */
+.sec-resumo{padding:70px 60px;max-width:1100px;margin:0 auto;}
+.resumo-table{width:100%;border-collapse:collapse;margin-top:32px;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(44,26,14,.1);}
+.resumo-table th{background:var(--marrom);color:var(--amarelo);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 16px;text-align:left;}
+.resumo-table td{padding:13px 16px;font-size:13px;border-bottom:1px solid rgba(0,0,0,.06);background:var(--branco);}
+.resumo-table tr:last-child td{border-bottom:none;}
+.resumo-table tr:nth-child(even) td{background:var(--creme);}
+.badge-c{background:var(--amarelo-clr);color:var(--marrom);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
+.badge-v{background:var(--marrom);color:var(--amarelo);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;}
+.alerta-cell{color:#B45309;font-weight:600;}
+
+/* ══ FOOTER ══ */
+footer{background:var(--marrom);padding:36px 60px;text-align:center;}
+footer p{color:rgba(255,255,255,.4);font-size:13px;}
+footer strong{color:var(--amarelo);}
+
+@media(max-width:680px){
+  .barra{width:14px;}.pg{margin:0 14px;}
+  .grade,.legenda-wrap,.sec-resumo,.sec-videos,.sec-header{padding-left:20px;padding-right:20px;}
+}
+</style>
+</head>
+<body>
+
+<div class="barra esq"><div class="bd"></div><div class="bd"></div><div class="bd"></div><div class="bd"></div><div class="bd"></div></div>
+<div class="barra dir"><div class="bd"></div><div class="bd"></div><div class="bd"></div><div class="bd"></div><div class="bd"></div></div>
+
+<div class="pg">
+
+<!-- ══ CAPA ══ -->
+<section class="capa">
+  <svg class="capa-mandala" viewBox="0 0 400 400" fill="none"><g stroke="#F5A623" stroke-width=".7"><circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="155"/><circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="85"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(0 200 200)"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(30 200 200)"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(60 200 200)"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(90 200 200)"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(120 200 200)"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(150 200 200)"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(180 200 200)"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(210 200 200)"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(240 200 200)"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(270 200 200)"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(300 200 200)"/><ellipse cx="200" cy="65" rx="16" ry="55" transform="rotate(330 200 200)"/></g></svg>
+  <svg class="bfly" style="top:14%;left:7%;width:56px;" viewBox="0 0 80 60" fill="none"><path d="M40 30 Q20 5 5 15 Q0 30 20 35 Q30 38 40 30Z" fill="#F5A623"/><path d="M40 30 Q60 5 75 15 Q80 30 60 35 Q50 38 40 30Z" fill="#F5A623" opacity=".7"/><path d="M40 30 Q22 50 8 44 Q4 30 22 28 Q31 27 40 30Z" fill="#F5A623" opacity=".45"/><path d="M40 30 Q58 50 72 44 Q76 30 58 28 Q49 27 40 30Z" fill="#F5A623" opacity=".3"/></svg>
+  <svg class="bfly" style="bottom:18%;right:8%;width:44px;animation-delay:2.5s;" viewBox="0 0 80 60" fill="none"><path d="M40 30 Q20 5 5 15 Q0 30 20 35 Q50 38 40 30Z" fill="#F5A623"/><path d="M40 30 Q60 5 75 15 Q80 30 60 35 Q50 38 40 30Z" fill="#F5A623" opacity=".7"/><path d="M40 30 Q22 50 8 44 Q4 30 22 28 Q31 27 40 30Z" fill="#F5A623" opacity=".45"/><path d="M40 30 Q58 50 72 44 Q76 30 58 28 Q49 27 40 30Z" fill="#F5A623" opacity=".3"/></svg>
+
+  <span class="capa-tag">@simonewelterb · Plano de Conteúdo</span>
+  <h1>Maio <em>&</em> Junho<br><em>2026</em></h1>
+  <p class="capa-sub">4 carrosséis + 4 vídeos · estratégia completa com textos, legendas e orientações de produção</p>
+  <div class="capa-pills">
+    <span class="pill">🦋 Gestão da Receptividade</span>
+    <span class="pill">♡ Bem-Estar Corporativo</span>
+    <span class="pill">◎ NR1 · Riscos Psicossociais</span>
+    <span class="pill">✦ Empresas de Médio Porte</span>
+  </div>
+</section>
+
+<!-- ══ CARROSSÉIS ══ -->
+<div class="sec-header">
+  <span class="sec-label">Carrosséis</span>
+  <h2 class="sec-h2">4 posts para <em>gerar leads</em> no direct</h2>
+</div>
+
+<div class="grade">
+
+  <!-- C1 -->
+  <div class="card">
+    <div class="card-meta">
+      <span class="card-sem">Semana 1 · Terça</span>
+      <span class="card-tipo">Carrossel</span>
+    </div>
+    <div class="card-body">
+      <div class="card-pretitulo">C1 — 5 slides</div>
+      <div class="card-titulo">A NR1 mudou.<br><em>Sua empresa está em conformidade?</em></div>
+      <div class="card-subtitulo">Urgência legal — gestor manda NR1 no direct</div>
+      <div class="slides-lista">
+        <div class="slide-item"><div class="slide-num">C</div><div class="slide-txt"><strong>Capa:</strong> "A NR1 mudou. Sua empresa está em conformidade?" · subtexto: Riscos psicossociais agora são obrigação legal</div></div>
+        <div class="slide-item"><div class="slide-num">2</div><div class="slide-txt"><strong>O que mudou:</strong> Desde maio de 2025, toda empresa com CLT precisa identificar e controlar riscos psicossociais</div></div>
+        <div class="slide-item"><div class="slide-num">3</div><div class="slide-txt"><strong>O que são riscos psicossociais:</strong> assédio, sobrecarga, conflitos, falta de clareza de função, clima hostil</div></div>
+        <div class="slide-item"><div class="slide-num">4</div><div class="slide-txt"><strong>Checklist:</strong> diagnóstico documentado · plano de ação · registros · treinamento para líderes</div></div>
+        <div class="slide-item slide-cta"><div class="slide-num" style="background:var(--amarelo);color:var(--marrom);">5</div><div class="slide-txt"><strong style="color:var(--amarelo);">CTA:</strong> "Sua empresa precisa de um diagnóstico? Me manda <strong>NR1</strong> no direct."</div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-footer-txt">Foto: CDF_8500.JPG · blazer preto · autoridade</span>
+      <span class="card-cta-badge">CTA: NR1</span>
+    </div>
+  </div>
+
+  <!-- C2 -->
+  <div class="card">
+    <div class="card-meta">
+      <span class="card-sem">Semana 2 · Terça</span>
+      <span class="card-tipo">Carrossel</span>
+    </div>
+    <div class="card-body">
+      <div class="card-pretitulo">C2 — 5 slides</div>
+      <div class="card-titulo">3 frases que mostram que sua equipe está no <em>automático</em></div>
+      <div class="card-subtitulo">Identificação emocional do gestor com a dor</div>
+      <div class="slides-lista">
+        <div class="slide-item"><div class="slide-num">C</div><div class="slide-txt"><strong>Capa:</strong> "3 frases que mostram que sua equipe está no automático" · "E o cliente sente isso, mesmo que você não veja."</div></div>
+        <div class="slide-item"><div class="slide-num">2</div><div class="slide-txt"><strong>"Sempre foi assim."</strong> A equipe parou de pensar em melhoria. Virou rotina de sobrevivência.</div></div>
+        <div class="slide-item"><div class="slide-num">3</div><div class="slide-txt"><strong>"Cliente reclama de tudo."</strong> Ninguém mais se sente responsável. É proteção, não descaso.</div></div>
+        <div class="slide-item"><div class="slide-num">4</div><div class="slide-txt"><strong>"Eu faço a minha parte, o resto não é comigo."</strong> Equipe fragmentada. O cliente percebe antes do gestor.</div></div>
+        <div class="slide-item slide-cta"><div class="slide-num" style="background:var(--amarelo);color:var(--marrom);">5</div><div class="slide-txt"><strong style="color:var(--amarelo);">CTA:</strong> "Você se reconheceu? Me manda <strong>DIAGNÓSTICO</strong> no direct."</div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-footer-txt">Foto: CDF_8363.JPG · postura acessível</span>
+      <span class="card-cta-badge">CTA: DIAGNÓSTICO</span>
+    </div>
+  </div>
+
+  <!-- C3 -->
+  <div class="card">
+    <div class="card-meta">
+      <span class="card-sem">Semana 3 · Terça</span>
+      <span class="card-tipo">Carrossel</span>
+    </div>
+    <div class="card-body">
+      <div class="card-pretitulo">C3 — 5 slides</div>
+      <div class="card-titulo">O que eu faço quando entro na <em>sua empresa</em></div>
+      <div class="card-subtitulo">Autoridade + quebra de objeção "mais um treinamento"</div>
+      <div class="slides-lista">
+        <div class="slide-item"><div class="slide-num">C</div><div class="slide-txt"><strong>Capa:</strong> "O que eu faço quando entro na sua empresa" · subtexto: Não é palestra. Não é treinamento genérico.</div></div>
+        <div class="slide-item"><div class="slide-num">2</div><div class="slide-txt"><strong>Passo 1 — Escuto você:</strong> Entendo seus desafios com equipe, atendimento, clima e liderança. Começo pela realidade da empresa.</div></div>
+        <div class="slide-item"><div class="slide-num">3</div><div class="slide-txt"><strong>Passo 2 — Diagnóstico da receptividade:</strong> Observo o dia a dia, converso com a equipe, entrego um raio-X claro.</div></div>
+        <div class="slide-item"><div class="slide-num">4</div><div class="slide-txt"><strong>Passo 3 — Treinamento sob medida:</strong> Em média 20h, 2 encontros por semana. Comportamento, emocional e receptividade na prática.</div></div>
+        <div class="slide-item slide-cta"><div class="slide-num" style="background:var(--amarelo);color:var(--marrom);">5</div><div class="slide-txt"><strong style="color:var(--amarelo);">CTA:</strong> "Quer esse processo na sua empresa? Me manda <strong>EMPRESA</strong> no direct."</div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-footer-txt">Foto: CDF_8144.JPG · blazer branco + amarelo</span>
+      <span class="card-cta-badge">CTA: EMPRESA</span>
+    </div>
+  </div>
+
+  <!-- C4 -->
+  <div class="card">
+    <div class="card-meta">
+      <span class="card-sem">Semana 4 · Terça</span>
+      <span class="card-tipo">Carrossel</span>
+    </div>
+    <div class="card-body">
+      <div class="card-pretitulo">C4 — 5 slides</div>
+      <div class="card-titulo">Com quem eu trabalho — e com quem eu <em>não trabalho</em></div>
+      <div class="card-subtitulo">Filtrar público qualificado · posicionamento de autoridade</div>
+      <div class="slides-lista">
+        <div class="slide-item"><div class="slide-num">C</div><div class="slide-txt"><strong>Capa:</strong> "Com quem eu trabalho — e com quem eu não trabalho"</div></div>
+        <div class="slide-item"><div class="slide-num">2</div><div class="slide-txt"><strong>Eu trabalho com você se…</strong> empresa de médio porte de serviços · valoriza pessoas · quer mudança real · disposto a entrar no processo</div></div>
+        <div class="slide-item"><div class="slide-num">3</div><div class="slide-txt"><strong>Eu não trabalho com você se…</strong> quer palestra pontual · acha que o problema é só a equipe · não disponível pro diagnóstico · quer resultado em 1 encontro</div></div>
+        <div class="slide-item"><div class="slide-num">4</div><div class="slide-txt"><strong>Por que sou direta nisso?</strong> Resultado de verdade exige processo. Empresa que entra sem essa compreensão não evolui.</div></div>
+        <div class="slide-item slide-cta"><div class="slide-num" style="background:var(--amarelo);color:var(--marrom);">5</div><div class="slide-txt"><strong style="color:var(--amarelo);">CTA:</strong> "Se você se reconheceu no primeiro grupo, me chama no direct."</div></div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-footer-txt">Foto: CDF_8352.JPG · ombro nu · direta</span>
+      <span class="card-cta-badge">CTA: direct</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- LEGENDAS -->
+<div class="legenda-wrap">
+  <div class="legenda-card">
+    <div class="leg-num">C1 · Legenda</div>
+    <div class="leg-titulo">NR1 — obrigação legal</div>
+    <div class="leg-texto">Desde maio de 2025, a NR1 obriga todas as empresas com CLT a avaliar e gerenciar riscos psicossociais.
+
+Não é burocracia. É reconhecer que clima ruim, sobrecarga e conflito têm custo real — em saúde, turnover e produtividade.
+
+Se você é dono ou gestor e ainda não sabe se sua empresa está em conformidade, me manda NR1 no direct.</div>
+    <div class="leg-hashtags">#NR1 #riscospsicossociais #gestaodeequipes #treinamentocorporativo #bemestarnotrabalho #empresasdemediaporte</div>
+    <span class="leg-cta-badge">CTA: NR1</span>
+  </div>
+  <div class="legenda-card">
+    <div class="leg-num">C2 · Legenda</div>
+    <div class="leg-titulo">3 frases — equipe no automático</div>
+    <div class="leg-texto">Essas frases aparecem em empresas de serviço o tempo todo.
+
+"Sempre foi assim." "Cliente reclama de tudo." "Eu faço a minha parte, o resto não é comigo."
+
+Elas não são problema de pessoa. São sintoma de equipe sem espaço, sem preparo emocional e sem receptividade treinada.
+
+Se você é dono ou gestor e ouve isso na sua empresa, me manda DIAGNÓSTICO no direct.</div>
+    <div class="leg-hashtags">#gestaodeequipes #atendimentoaocliente #lideranca #climaorganizacional #gestaodareceptividade</div>
+    <span class="leg-cta-badge">CTA: DIAGNÓSTICO</span>
+  </div>
+  <div class="legenda-card">
+    <div class="leg-num">C3 · Legenda</div>
+    <div class="leg-titulo">O que eu faço quando entro na empresa</div>
+    <div class="leg-texto">Quando eu entro na sua empresa, não levo um treinamento pronto.
+
+Primeiro escuto você. Depois faço um diagnóstico da receptividade com a equipe. Só então desenho o treinamento — em média 20h, 2 encontros por semana.
+
+Treinamento genérico é dinheiro jogado fora. O que muda equipe é processo desenhado pra realidade dela.
+
+Dono ou gestor de empresa de médio porte? Me manda EMPRESA no direct.</div>
+    <div class="leg-hashtags">#gestaodareceptividade #treinamentocorporativo #desenvolvimentodeequipes #liderancahumanizada</div>
+    <span class="leg-cta-badge">CTA: EMPRESA</span>
+  </div>
+  <div class="legenda-card">
+    <div class="leg-num">C4 · Legenda</div>
+    <div class="leg-titulo">Posicionamento — com quem trabalho</div>
+    <div class="leg-texto">Não trabalho com todo mundo. E ser clara sobre isso respeita o seu tempo e o meu.
+
+Meu trabalho é pra empresa que quer mudança real — não pra quem precisa "colocar treinamento no currículo da empresa".
+
+Se você é dono ou gestor de empresa de médio porte e quer uma equipe que realmente muda o jeito de atender e se relacionar, me chama no direct.</div>
+    <div class="leg-hashtags">#gestaodareceptividade #treinamentocorporativo #lideranca #empresasdemediaporte</div>
+    <span class="leg-cta-badge">CTA: direct</span>
+  </div>
+</div>
+
+<!-- ══ VÍDEOS ══ -->
+<div class="sec-videos">
+  <div class="sec-header">
+    <span class="sec-label" style="color:rgba(255,255,255,.5);">Vídeos</span>
+    <h2 class="sec-h2">4 reels de <em>até 30 segundos</em></h2>
+  </div>
+  <div class="videos-grid">
+
+    <!-- V1 -->
+    <div class="video-card">
+      <div class="video-body">
+        <div class="video-sem">Semana 1 · Quinta</div>
+        <div class="video-titulo">V1 — Aqui a equipe sai do <em>automático</em></div>
+        <div class="video-dur">⏱ Máx. 30 segundos</div>
+        <div class="video-textos">
+          <div class="vt">0s · "Aqui a equipe sai do automático."</div>
+          <div class="vt">6s · "A gente treina comportamento e emocional, não só técnica."</div>
+          <div class="vt">12s · "Consenso, resistência… tudo aparece na forma como a equipe se relaciona."</div>
+          <div class="vt">18s · "Quando a equipe se percebe, muda o jeito de atender."</div>
+          <div class="vt">24s · "É assim que construímos equipes mais humanas e receptivas."</div>
+        </div>
+        <div class="video-mat">📁 IMG_7525.MOV + IMG_7411.MOV · Roteiro 1 já existe no Drive</div>
+      </div>
+    </div>
+
+    <!-- V2 -->
+    <div class="video-card">
+      <div class="video-body">
+        <div class="video-sem">Semana 2 · Quinta</div>
+        <div class="video-titulo">V2 — Treinar receptividade é <em>viver receptividade</em></div>
+        <div class="video-dur">⏱ Máx. 30 segundos</div>
+        <div class="video-textos">
+          <div class="vt">0s · "Treinar receptividade é viver receptividade."</div>
+          <div class="vt">7s · "Aqui, a equipe sente na pele o que é acolher pessoas."</div>
+          <div class="vt">14s · "Corpo, emoção e atitude caminhando juntos."</div>
+          <div class="vt">20s · "Uma equipe acolhida acolhe muito melhor o cliente."</div>
+          <div class="vt">26s · "Quer viver isso com a sua equipe?"</div>
+        </div>
+        <div class="video-mat">📁 IMG_7928.MOV (abraço/contagem) · Roteiro 2 já existe no Drive</div>
+        <div class="video-alerta">⚠ Não cobrir a voz dela na contagem — esse som é o que converte</div>
+      </div>
+    </div>
+
+    <!-- V3 -->
+    <div class="video-card">
+      <div class="video-body">
+        <div class="video-sem">Semana 3 · Quinta</div>
+        <div class="video-titulo">V3 — Não é palestra. É <em>processo.</em></div>
+        <div class="video-dur">⏱ Máx. 30 segundos</div>
+        <div class="video-textos">
+          <div class="vt">0s · "A primeira coisa que faço não é montar treinamento. É escutar."</div>
+          <div class="vt">Corte · [grupo em roda] · "Diagnóstico. Processo. Resultado."</div>
+          <div class="vt">Final · "O que muda equipe é processo desenhado pra realidade dela."</div>
+          <div class="vt">CTA · "Dono ou gestor? Me manda EMPRESA no direct."</div>
+        </div>
+        <div class="video-mat">📁 Cortes de vivência do grupo · Roteiro 3 já existe no Drive</div>
+        <div class="video-alerta">⚠ Precisa de vídeo dela falando pra câmera — gravar novo</div>
+      </div>
+    </div>
+
+    <!-- V4 -->
+    <div class="video-card">
+      <div class="video-body">
+        <div class="video-sem">Semana 4 · Quinta</div>
+        <div class="video-titulo">V4 — <em>NR1</em> em 30 segundos</div>
+        <div class="video-dur">⏱ Exatamente 30 segundos</div>
+        <div class="video-textos">
+          <div class="vt">0s · "NR1: o que mudou e o que sua empresa precisa fazer."</div>
+          <div class="vt">12s · "Riscos psicossociais são obrigação legal desde maio de 2025."</div>
+          <div class="vt">26s · "Me manda NR1 no direct."</div>
+        </div>
+        <div class="video-mat">📁 Sem material no Drive ainda</div>
+        <div class="video-alerta">⚠ GRAVAR NOVO — ela direto pra câmera, fundo neutro, 30s contados</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ RESUMO ══ -->
+<div class="sec-resumo">
+  <span class="sec-label">Resumo</span>
+  <h2 class="sec-h2">Calendário operacional — <em>4 semanas</em></h2>
+  <table class="resumo-table">
+    <thead>
+      <tr><th>#</th><th>Sem.</th><th>Dia</th><th>Formato</th><th>Tema</th><th>Material</th><th>CTA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>C1</td><td>1</td><td>Terça</td><td><span class="badge-c">Carrossel</span></td><td>NR1 — obrigação legal</td><td>CDF_8500.JPG</td><td><strong>NR1</strong></td></tr>
+      <tr><td>V1</td><td>1</td><td>Quinta</td><td><span class="badge-v">Vídeo</span></td><td>Equipe sai do automático</td><td>IMG_7525 + IMG_7411</td><td>direct</td></tr>
+      <tr><td>C2</td><td>2</td><td>Terça</td><td><span class="badge-c">Carrossel</span></td><td>3 frases — automático</td><td>CDF_8363.JPG</td><td><strong>DIAGNÓSTICO</strong></td></tr>
+      <tr><td>V2</td><td>2</td><td>Quinta</td><td><span class="badge-v">Vídeo</span></td><td>Vivência do acolhimento</td><td>IMG_7928.MOV</td><td>EMPRESA</td></tr>
+      <tr><td>C3</td><td>3</td><td>Terça</td><td><span class="badge-c">Carrossel</span></td><td>O que eu faço — método</td><td>CDF_8144.JPG</td><td><strong>EMPRESA</strong></td></tr>
+      <tr><td>V3</td><td>3</td><td>Quinta</td><td><span class="badge-v">Vídeo</span></td><td>Não é palestra. É processo.</td><td class="alerta-cell">⚠ Gravar novo + cortes</td><td>EMPRESA</td></tr>
+      <tr><td>C4</td><td>4</td><td>Terça</td><td><span class="badge-c">Carrossel</span></td><td>Com quem eu trabalho</td><td>CDF_8352.JPG</td><td>direct</td></tr>
+      <tr><td>V4</td><td>4</td><td>Quinta</td><td><span class="badge-v">Vídeo</span></td><td>NR1 em 30 segundos</td><td class="alerta-cell">⚠ Gravar novo</td><td><strong>NR1</strong></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <p><strong>Simone Welter Bicca</strong> · @simonewelterb · Gestão da Receptividade e Bem-Estar Corporativo · Plano Mai/Jun 2026</p>
+</footer>
+
+</div>
+</body>
+</html>
